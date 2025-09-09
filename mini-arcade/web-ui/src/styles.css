@@ -1,0 +1,173 @@
+﻿body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f5f5f5;
+}
+
+.App {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 24px;
+}
+
+.game-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-top: 24px;
+  position: relative;
+}
+
+.game-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.arcade-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #222;
+  color: #fff;
+}
+
+#arcade-title {
+  margin-top: 24px;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  color: #ffeb3b;
+  text-shadow: 1px 1px 4px #000;
+}
+
+.arcade-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 0 8px 0;
+  background: #333;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.arcade-label {
+  font-weight: bold;
+  margin-right: 4px;
+}
+.arcade-input, .arcade-select {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #888;
+  background: #222;
+  color: #fff;
+  outline: none;
+}
+.arcade-input:focus, .arcade-select:focus {
+  border-color: #ffeb3b;
+  box-shadow: 0 0 0 2px #ffeb3b55;
+}
+.arcade-checkbox {
+  accent-color: #ffeb3b;
+  width: 18px;
+  height: 18px;
+}
+.arcade-buttons button {
+  margin: 0 4px;
+  padding: 6px 16px;
+  border-radius: 4px;
+  border: none;
+  background: #ffeb3b;
+  color: #222;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.arcade-buttons button:disabled {
+  background: #888;
+  color: #222;
+  cursor: not-allowed;
+}
+.arcade-buttons button:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+.arcade-hud {
+  margin: 12px 0 8px 0;
+  background: #333;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  min-width: 260px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.arcade-hud span {
+  font-weight: bold;
+  color: #ffeb3b;
+}
+.arcade-hud ol {
+  margin: 4px 0 0 20px;
+  padding: 0;
+}
+.arcade-hud li {
+  color: #fff;
+  font-size: 1rem;
+}
+.arcade-game-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 60vh;
+  flex: 1 1 auto;
+}
+.arcade-game-inner {
+  background: #111;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px #000a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 360px;
+  height: 640px;
+  margin: 24px 0;
+  overflow: hidden;
+  position: relative;
+}
+.arcade-iframe {
+  width: 360px;
+  height: 640px;
+  border: none;
+  background: #000;
+  border-radius: 12px;
+  display: block;
+}
+.arcade-warning {
+  margin: 16px 0;
+  padding: 12px 20px;
+  background: #ff5252;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #000a;
+  text-align: center;
+}
+@media (max-width: 400px) {
+  .arcade-game-inner, .arcade-iframe {
+    width: 100vw;
+    height: calc(100vw * 640 / 360);
+    min-width: 0;
+    min-height: 0;
+  }
+}
